@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sound Website</title>
+  <style>
+    body {
+      background: url(image.png) no-repeat center center/cover;
+      height: 90vh;
+      width: 90vw;
+    }
+
+    nav {
+      display: flex;
+    }
+
+    ul {
+      display: flex;
+      margin: -125px 22px;
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      list-style-type: none;
+      font-size: 28px;
+      justify-content: space-between;
+      float: right;
+    }
+
+    main h1 {
+      font-size: 63px;
+      color: white;
+      margin: 48px 302px;
+    }
+
+    li {
+      padding: 22px 24px;
+    }
+
+    li:hover {
+      cursor: pointer;
+      color: red;
+    }
+
+    .pause {
+      float: right;
+      margin: -200px 1px;
+    }
+
+    nav,
+    ul {
+      z-index: 1;
+    }
+
+    .Click {
+      float: right;
+      margin: -147px 140px;
+      font-size: 25px;
+
+    }
+
+    .pause:hover {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <nav>
+      <img src="logo.png" />
+    </nav>
+  </div>
+  <ul>
+    <li class="nav">Home</li>
+    <li class="nav">About</li>
+    <li class="nav">Contact</li>
+  </ul>
+  <main>
+    <h1>
+      The <br />
+      Rishu's <br />
+      Sound
+    </h1>
+  </main>
+  <img src="play.png" class="pause" id="icon" />
+  <div class="Click">Click Here To Listen</div>
+  <audio id="mySong">
+    <source src="Imagine Dragons  Bad Liar.mp3" type="audio/mp3" />
+  </audio>
+  <script>
+    var mySong = document.getElementById("mySong");
+    var icon = document.getElementById("icon");
+    icon.onclick = function () {
+      if (mySong.paused) {
+        mySong.play();
+        icon.src = "pause.png";
+      } else {
+        mySong.pause();
+        icon.src = "play.png";
+      }
+    };
+  </script>
+</body>
+
+</html>
